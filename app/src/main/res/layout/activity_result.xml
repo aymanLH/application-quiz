@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#7C3AED">
+
+    <!-- ── X CLOSE BUTTON ───────────────────────────────────── -->
+    <TextView
+        android:id="@+id/btn_close"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="48dp"
+        android:text="✕"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:background="?attr/selectableItemBackgroundBorderless" />
+
+    <!-- ── MAIN CONTENT ─────────────────────────────────────── -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="120dp"
+        android:paddingBottom="32dp">
+
+        <!-- "Nice Work" / message title -->
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nice Work"
+            android:textColor="#FFFFFF"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Big star icon -->
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:src="@drawable/ic_star"
+            android:scaleType="fitCenter"
+            android:layout_marginBottom="32dp" />
+
+        <!-- "You Earned X pts" -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="64dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Score is "
+                android:textColor="#D4C8FF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8/10"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- Hidden views kept for Java compatibility -->
+        <TextView
+            android:id="@+id/tv_player_name"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_percent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone" />
+
+        <!-- Play Again — orange solid -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_play_again"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Play Again"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="#FF6B35"
+            app:cornerRadius="32dp" />
+
+        <!-- Leaderboard — semi-transparent purple -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_leaderboard"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="14dp"
+            android:text="Leaderboard"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="#9F67FF"
+            app:cornerRadius="32dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

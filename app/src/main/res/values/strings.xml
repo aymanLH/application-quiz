@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">QuizApp</string>
+
+    <!-- Home screen -->
+    <string name="hint_name">Enter your name</string>
+    <string name="btn_play_offline">Play Offline (50 questions)</string>
+    <string name="btn_play_ai">Play with AI</string>
+
+    <!-- Quiz screen -->
+    <string name="btn_next">Next</string>
+    <string name="question_counter">Question %1$d of %2$d</string>
+
+    <!-- Result screen -->
+    <string name="your_score">Your Score</string>
+    <string name="btn_play_again">Play Again</string>
+    <string name="btn_leaderboard">Leaderboard</string>
+
+    <!-- AI Setup screen -->
+    <string name="hint_topic">Enter a topic (e.g. History)</string>
+    <string name="btn_generate">Generate Questions</string>
+    <string name="loading_ai">Generating your quiz…</string>
+</resources>

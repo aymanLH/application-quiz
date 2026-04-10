@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#7C3AED">
+
+    <!-- ── FULL SCREEN DOODLE BACKGROUND ────────────────────── -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_doodle"
+        android:scaleType="centerCrop"
+        android:alpha="0.10" />
+
+    <!-- ── TOP TITLE ────────────────────────────────────────── -->
+    <TextView
+        android:id="@+id/tv_app_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:text="QuizApp"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-medium" />
+
+    <!-- ── BOTTOM NAV BAR ────────────────────────────────────── -->
+    <LinearLayout
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:background="#6D28D9"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <!-- HOME tab (not clickable — current screen) -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:src="@drawable/ic_home" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="HOME"
+                android:textColor="#FF6B35"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.1" />
+
+        </LinearLayout>
+
+        <!-- LEADERBOARD tab -->
+        <LinearLayout
+            android:id="@+id/btn_leaderboard"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="?attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:src="@drawable/ic_trophy" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="LEADERBOARD"
+                android:textColor="#B0B0C8"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.1" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- ── MAIN SCROLLABLE CONTENT ──────────────────────────── -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tv_app_title"
+        android:layout_above="@id/bottom_nav"
+        android:layout_marginTop="16dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- ── MAIN CARD ──────────────────────────────────── -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="12dp"
+                app:cardBackgroundColor="#8B46F0">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Doodle image at top of card -->
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:src="@drawable/bg_doodle"
+                        android:scaleType="centerCrop" />
+
+                    <!-- Card text + inputs -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Welcome back!"
+                            android:textColor="#FFFFFF"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="Ready to challenge your knowledge?\nPick a mode and start playing."
+                            android:textColor="#D4C8FF"
+                            android:textSize="14sp"
+                            android:lineSpacingMultiplier="1.4" />
+
+                        <!-- Name input — no start icon -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/til_name"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            app:boxCornerRadiusTopStart="12dp"
+                            app:boxCornerRadiusTopEnd="12dp"
+                            app:boxCornerRadiusBottomStart="12dp"
+                            app:boxCornerRadiusBottomEnd="12dp"
+                            app:boxStrokeColor="#FFFFFF"
+                            app:boxBackgroundColor="#FFFFFF"
+                            app:hintEnabled="false">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Your Name"
+                                android:textColorHint="#D4C8FF"
+                                android:textColor="#000000"
+                                android:inputType="textPersonName|textCapWords"
+                                android:maxLength="20"
+                                android:imeOptions="actionDone" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+
+                        <!-- Play Offline button -->
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/btn_offline"
+                            android:layout_width="match_parent"
+                            android:layout_height="64dp"
+                            android:foreground="?attr/selectableItemBackground"
+                            app:cardCornerRadius="14dp"
+                            app:cardElevation="0dp"
+                            app:cardBackgroundColor="#FFFFFF">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:paddingStart="16dp"
+                                android:paddingEnd="16dp">
+
+                                <ImageView
+                                    android:id="@+id/icon_offline"
+                                    android:layout_width="52dp"
+                                    android:layout_height="52dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_alignParentStart="true"
+                                    android:src="@drawable/ic_offline"
+                                    android:padding="8dp"
+                                    android:background="@drawable/circle_orange" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toEndOf="@id/icon_offline"
+                                    android:layout_marginStart="14dp"
+                                    android:text="Play Offline"
+                                    android:textColor="#1A1A2E"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_alignParentEnd="true"
+                                    android:text="›"
+                                    android:textColor="#AAAAAA"
+                                    android:textSize="28sp" />
+
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Play with AI button -->
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/btn_ai"
+                            android:layout_width="match_parent"
+                            android:layout_height="64dp"
+                            android:layout_marginTop="12dp"
+                            android:foreground="?attr/selectableItemBackground"
+                            app:cardCornerRadius="14dp"
+                            app:cardElevation="0dp"
+                            app:cardBackgroundColor="#FFFFFF">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:paddingStart="16dp"
+                                android:paddingEnd="16dp">
+
+                                <ImageView
+                                    android:id="@+id/icon_ai"
+                                    android:layout_width="52dp"
+                                    android:layout_height="52dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_alignParentStart="true"
+                                    android:src="@drawable/ic_ai"
+                                    android:padding="8dp"
+                                    android:background="@drawable/circle_orange" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toEndOf="@id/icon_ai"
+                                    android:layout_marginStart="14dp"
+                                    android:text="Play with AI"
+                                    android:textColor="#1A1A2E"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_alignParentEnd="true"
+                                    android:text="›"
+                                    android:textColor="#AAAAAA"
+                                    android:textSize="28sp" />
+
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="8dp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

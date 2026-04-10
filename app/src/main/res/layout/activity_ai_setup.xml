@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#7C3AED">
+
+    <!-- ── BACK BUTTON ──────────────────────────────────────── -->
+    <TextView
+        android:id="@+id/btn_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:text="←"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:gravity="center"
+        android:background="?attr/selectableItemBackgroundBorderless" />
+
+    <!-- ── TITLE ─────────────────────────────────────────────── -->
+    <LinearLayout
+        android:id="@+id/title_block"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="56dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AI Quiz"
+            android:textColor="#FFFFFF"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Generate questions with AI"
+            android:textColor="#D4C8FF"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <!-- ── SCROLLABLE CONTENT ────────────────────────────────── -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/title_block"
+        android:layout_marginTop="40dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="32dp">
+
+            <!-- Card + floating icon wrapper -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- White card -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/main_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="8dp"
+                    app:cardBackgroundColor="#FFFFFF">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingStart="24dp"
+                        android:paddingEnd="24dp"
+                        android:paddingTop="56dp"
+                        android:paddingBottom="28dp">
+
+                        <!-- QUIZ TOPIC label -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="QUIZ TOPIC"
+                            android:textColor="#9E9E9E"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:letterSpacing="0.12"
+                            android:layout_marginBottom="10dp" />
+
+                        <!-- Topic input -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/til_topic"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            app:boxCornerRadiusTopStart="14dp"
+                            app:boxCornerRadiusTopEnd="14dp"
+                            app:boxCornerRadiusBottomStart="14dp"
+                            app:boxCornerRadiusBottomEnd="14dp"
+                            app:boxStrokeColor="#E8E8F0"
+                            app:boxBackgroundColor="#F4F4FB"
+                            app:hintEnabled="false">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_topic"
+                                android:layout_width="match_parent"
+                                android:layout_height="56dp"
+                                android:hint="e.g. Ancient Greek History"
+                                android:textSize="15sp"
+                                android:inputType="text"
+                                android:imeOptions="actionDone" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- NUMBER OF QUESTIONS label -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="NUMBER OF QUESTIONS"
+                            android:textColor="#9E9E9E"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:letterSpacing="0.12"
+                            android:layout_marginTop="24dp"
+                            android:layout_marginBottom="14dp" />
+
+                        <!-- Chips -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+                            <TextView
+                                android:id="@+id/chip_5"
+                                android:layout_width="0dp"
+                                android:layout_height="56dp"
+                                android:layout_weight="1"
+                                android:layout_marginEnd="6dp"
+                                android:text="5"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:gravity="center"
+                                android:background="@drawable/chip_unselected" />
+
+                            <TextView
+                                android:id="@+id/chip_10"
+                                android:layout_width="0dp"
+                                android:layout_height="56dp"
+                                android:layout_weight="1"
+                                android:layout_marginStart="6dp"
+                                android:layout_marginEnd="6dp"
+                                android:text="10"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:gravity="center"
+                                android:background="@drawable/chip_selected" />
+
+                            <TextView
+                                android:id="@+id/chip_15"
+                                android:layout_width="0dp"
+                                android:layout_height="56dp"
+                                android:layout_weight="1"
+                                android:layout_marginStart="6dp"
+                                android:layout_marginEnd="6dp"
+                                android:text="15"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:gravity="center"
+                                android:background="@drawable/chip_unselected" />
+
+                            <TextView
+                                android:id="@+id/chip_20"
+                                android:layout_width="0dp"
+                                android:layout_height="56dp"
+                                android:layout_weight="1"
+                                android:layout_marginStart="6dp"
+                                android:text="20"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:gravity="center"
+                                android:background="@drawable/chip_unselected" />
+
+                        </LinearLayout>
+
+                        <!-- Generate button -->
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_generate"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="28dp"
+                            android:text="Generate Questions"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:backgroundTint="#FF6B35"
+                            app:cornerRadius="32dp" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- AI icon floating above card -->
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignTop="@id/main_card"
+                    android:layout_marginTop="-40dp"
+                    android:src="@drawable/ic_ai"
+                    android:padding="16dp"
+                    android:background="@drawable/circle_orange"
+                    android:elevation="8dp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,26 @@
+<resources>
+    <!-- Primary brand color -->
+    <color name="primary">#3F51B5</color>       <!-- indigo -->
+    <color name="primary_dark">#283593</color>  <!-- darker indigo -->
+    <color name="primary_light">#C5CAE9</color> <!-- light indigo tint -->
+
+    <!-- Answer button states -->
+    <color name="answer_default">#FFFFFF</color>  <!-- white (not selected) -->
+    <color name="answer_correct">#4CAF50</color>  <!-- green -->
+    <color name="answer_wrong">#F44336</color>    <!-- red -->
+    <color name="answer_selected">#E8EAF6</color> <!-- light indigo tint -->
+
+    <!-- Backgrounds -->
+    <color name="background">#F5F5F5</color>       <!-- light grey -->
+    <color name="card_background">#FFFFFF</color>   <!-- pure white cards -->
+
+    <!-- Text -->
+    <color name="text_primary">#212121</color>      <!-- near-black -->
+    <color name="text_secondary">#757575</color>    <!-- grey -->
+    <color name="text_on_primary">#FFFFFF</color>   <!-- white text on indigo -->
+
+    <!-- Score result colors -->
+    <color name="score_excellent">#4CAF50</color>   <!-- 80%+  -->
+    <color name="score_good">#FF9800</color>         <!-- 50-79% -->
+    <color name="score_poor">#F44336</color>          <!-- below 50% -->
+</resources>

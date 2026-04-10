@@ -1,0 +1,29 @@
+<resources>
+    <style name="Theme.QuizApp"
+        parent="Theme.MaterialComponents.Light.NoActionBar">
+
+        <!-- Toolbar and top app bar color -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_dark</item>
+
+        <!-- Status bar color (top of phone screen) -->
+        <item name="android:statusBarColor">@color/primary_dark</item>
+
+        <!-- Text fields use outline style (cleaner look) -->
+        <item name="textInputStyle">
+            @style/Widget.MaterialComponents.TextInputLayout.OutlinedBox
+        </item>
+
+        <!-- Buttons are fully rounded pill shape -->
+        <item name="materialButtonStyle">
+            @style/Widget.MaterialComponents.Button.UnelevatedButton
+        </item>
+    </style>
+
+    <!-- Style for each answer option card -->
+    <style name="AnswerCard" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">2dp</item>
+        <item name="android:layout_margin">6dp</item>
+    </style>
+</resources>
